@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ejercicio 2 - sesion 29</title>
+    <link rel="stylesheet" href="hojaestilos.css">
+    <script>
+    function dibujarLinea(){
+        var canvasvar1 = document.getElementById("canvas1"); 
+        var contexto1 = canvasvar1.getContext("2d");
+         contexto1.moveTo(0, 0); 
+        contexto1.lineTo(300, 200);
+        contexto1.lineTo(600, 0);
+         /*Eje x eje y*/ contexto1.stroke();
+    }
+    function escribirTexto(){
+        var canvasvar1 = document.getElementById("canvas1");
+        var contexto1 = canvasvar1.getContext("2d"); 
+        contexto1.font = "30px Arial";
+        contexto1.fillText("Hola a la clase de DAW", 100, 100);/*x, y*/
+    }
+    function dibujarCirculo(){
+        var canvasvar1 = document.getElementById("canvas1"); 
+        var contexto1 = canvasvar1.getContext("2d");
+        contexto1.beginPath(); contexto1.arc(300, 200, 100, 0, 2 * Math.PI);/*Eje x, eje y, radio, inicio de la circunferencia (0) y final de la circunferencia(2*PI) (2*Math.PI*R es la longitud completa de la circunferencia*/
+        contexto1.stroke();
+    }
+    function dibujarImagen(){
+        var canvasvar1 = document.getElementById("canvas1");
+        var contexto1 = canvasvar1.getContext("2d");
+        var imagen1 = document.getElementById("Imagen1");
+        contexto1.drawImage(imagen1, 5, 5); /*eje x, eje y*/
+    }
+    
+    </script>
+</head>
+<body>
+    <h2>canvas</h2>
+    <canvas id="canvas1" class="canvas1" width="600" height="400"> <!--canvas es un elemento de/en linea-->
+
+    </canvas>
+    <p><button onclick="dibujarLinea()">Dibujar linea</button></p>
+    <p><button onclick="escribirTexto()">escribir texto</button></p>
+    <p><button onclick="dibujarCirculo()">dibujar circulo</button></p>
+    <p><button onclick="dibujarImagen()">dibujar imagen</button></p>
+
+    <img id="Imagen1" src="img/15360074358993.jpg" alt="Karim" title="Karim" class="claseimagen">
+    
+</body>
+</html>
