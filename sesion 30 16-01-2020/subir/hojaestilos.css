@@ -1,0 +1,75 @@
+.contenedorgridalign, .contenedorgridjustifyspace, .contenedorgridjustifyenter, .contenedorgridjustify, .contenedorgriditemrows, .contenedorgriditemcolums, .contenedorgridlinea, .contenedorgrid {
+  grid-template-columns: auto auto auto;
+  background-color: blue;
+  padding: 10px;
+  column-gap: 30px;
+  /* espacio entre columnas */
+  row-gap: 40px;
+  /* espacio entre filas */
+  box-sizing: border-box;
+  /* borde dentro del ancho del contenedor */
+}
+
+.contenedorgridalign__elementohijo, .contenedorgridjustifyspace__elementohijo, .contenedorgridjustifyenter__elementohijo, .contenedorgridjustify__elementohijo, .contenedorgriditemrows__elementohijo, .contenedorgriditemcolums__elementohijo, .contenedorgridlinea__elementohijo, .contenedorgrid__elementohijo7, .contenedorgrid__elementohijo2, .contenedorgrid__elementohijo {
+  background-color: grey;
+  border: 1px solid black;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.contenedorgrid {
+  display: grid;
+  /*se muestra como bloque */
+}
+.contenedorgrid__elementohijo2 {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+.contenedorgrid__elementohijo7 {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.contenedorgridlinea {
+  display: inline-grid;
+}
+.contenedorgriditemcolums {
+  display: grid;
+  /*se muestra como bloque */
+  grid-template-columns: repeat(5, 20%);
+  gap: 0;
+  /*propiedad resumen de column-gap y row-gap */
+}
+.contenedorgriditemrows {
+  display: grid;
+  /*se muestra como bloque */
+  grid-template-columns: repeat(5, 20%);
+  gap: 0;
+  /*propiedad resumen de column-gap y row-gap */
+  grid-template-rows: 200px 300px 200px;
+}
+.contenedorgridjustify {
+  display: grid;
+  justify-content: end;
+}
+.contenedorgridjustifyenter {
+  display: grid;
+  margin-top: 20px;
+  justify-content: center;
+}
+.contenedorgridjustifyspace {
+  display: grid;
+  margin-top: 20px;
+  justify-content: space-around;
+}
+.contenedorgridalign {
+  display: grid;
+  min-height: 600px;
+  align-content: center;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=hojaestilos.css.map */

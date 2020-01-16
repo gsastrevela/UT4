@@ -1,0 +1,110 @@
+%contenedor{
+    grid-template-columns: auto auto auto;
+    background-color: blue;
+    padding: 10px;
+    column-gap: 30px; /* espacio entre columnas */
+    row-gap: 40px; /* espacio entre filas */
+    box-sizing: border-box; /* borde dentro del ancho del contenedor */
+}
+%hijo{
+    background-color: grey;
+        border: 1px solid black;
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+}
+
+
+
+.contenedorgrid{
+    display: grid; /*se muestra como bloque */
+   @extend %contenedor;
+    &__elementohijo{
+       @extend %hijo;
+    }
+    &__elementohijo2{
+        grid-row-start: 1;
+        grid-row-end: 3;
+        @extend %hijo;
+        grid-column-start:2 ;
+        grid-column-end: 3;
+    }
+    &__elementohijo7{
+        grid-column-start: 2;
+        grid-column-end: 3;
+        @extend %hijo;
+    }
+}
+
+.contenedorgridlinea{
+    display: inline-grid;
+    @extend %contenedor;
+    &__elementohijo{
+        @extend %hijo;
+    }
+}
+
+.contenedorgriditemcolums{
+    display: grid; /*se muestra como bloque */
+   @extend %contenedor;
+   grid-template-columns: repeat(5,20%);
+  
+   gap: 0; /*propiedad resumen de column-gap y row-gap */
+    &__elementohijo{
+       @extend %hijo;
+    }
+}
+
+.contenedorgriditemrows{
+    display: grid; /*se muestra como bloque */
+   @extend %contenedor;
+   grid-template-columns: repeat(5,20%);
+  
+   gap: 0; /*propiedad resumen de column-gap y row-gap */
+   grid-template-rows: 200px 300px 200px;
+    &__elementohijo{
+       @extend %hijo;
+    }
+}
+@mixin justifycontent($valor) {
+    justify-content: $valor;
+}
+.contenedorgridjustify{
+    display: grid;
+    @extend %contenedor;
+   @include justifycontent(end);
+    &__elementohijo{
+        @extend %hijo;
+    }
+}
+.contenedorgridjustifyenter{
+    display: grid;
+    @extend %contenedor;
+    margin-top: 20px;
+   @include justifycontent(center);
+    &__elementohijo{
+        @extend %hijo;
+    }
+}
+.contenedorgridjustifyspace{
+    display: grid;
+    @extend %contenedor;
+    margin-top: 20px;
+   @include justifycontent(space-around);
+    &__elementohijo{
+        @extend %hijo;
+    }
+}
+@mixin aligncontent($valor) {
+    align-content: $valor;
+}
+.contenedorgridalign{
+    display: grid;
+    @extend %contenedor;
+    min-height: 600px;
+   @include aligncontent(center);
+   @include justifycontent(center);
+    &__elementohijo{
+        @extend %hijo;
+    }
+}
