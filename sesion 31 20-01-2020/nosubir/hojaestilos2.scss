@@ -1,0 +1,30 @@
+
+.imagen2{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+.contenedorimagen{
+    width: 70%;
+    min-height: 500px;
+    background-image: url("../subir/img/Lago-Moraine-Parque-Nacional-Banff-Alberta-Canada-1440x810.jpg");
+    background-repeat: no-repeat;
+    border: 1px solid black;
+    margin: auto;
+    margin-top: 40px;
+    background-size: contain;
+}
+.contenedor{
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+    background-color: #f1f1f1;
+    &__elementohijo{
+        padding: 10px;
+        &__imagenresponsiva{
+            width: 100%;
+            height: auto;
+        }
+    }
+}
